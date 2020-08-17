@@ -1,0 +1,103 @@
+@font-face {
+  font-family: titleFont;
+  src: url(./PermanentMarker-Regular.ttf);
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginTitle {
+  font-family: titleFont;
+  color: #8e8e8e;
+  margin-bottom: 36px;
+  text-align: center;
+}
+.appLoginInput {
+  display: flex;
+  margin-bottom: 14px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.appLoginInput input[type='text'] {
+  width: 240px;
+  height: 36px;
+  text-align: center;
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  order: 2;
+}
+.appLoginInput input[type='text']:focus {
+  outline: 0;
+  border-color: #1E90FF;
+}
+.appLoginInput label {
+  margin-right: 20px;
+  font-size: 14px;
+  order: 1;
+}
+.appLoginInput input[type='text']:focus + label {
+  color:#1E90FF;
+}
+.appLoginInput.validationError input[type='text'] {
+  border: 1px solid #de0c0c;
+}
+.appLoginInput.validationError label {
+  color: #de0c0c;
+}
+.errorMessage {
+  padding: 10px;
+  border-radius: 10px;
+  color: #FFF;
+  background-color: #de0c0c;
+  position: absolute;
+  font-size: 12px;
+  top: -45px;
+  right: 0;
+}
+.errorMessage::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-left: 12px solid #de0c0c;
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+}
+.appLoginInputBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.appLoginInputBtn input[type='button'] {
+  width: 240px;
+  height: 36px;
+  color: #ffffff;
+  background-color: #1E90FF;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.appLoginInputBtn.validationError input[type='button'] {
+  background-color: #CCC;
+  pointer-events: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .appLoginInput {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .appLoginInput label {
+    margin-bottom: 5px;
+  }
+}
